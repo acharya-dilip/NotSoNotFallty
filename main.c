@@ -9,6 +9,14 @@ static void activate(GtkApplication *app,gpointer user_data) {
     login();
 }
 
+void login() {
+    GtkWidget *windowLogin;
+    GtkWidget *labelGmail;
+    GtkWidget *entryGmail;
+    GtkWidget *labelPassword;
+    GtkWidget *entryPassword;
+    GtkWidget *buttonLogin;
+}
 
 int main(int argc, char **argv){
     GtkApplication *app;
