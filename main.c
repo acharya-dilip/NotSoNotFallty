@@ -2,8 +2,11 @@
 #include <gtk/gtk.h>
 #include <curl/curl.h>
 
-static void activate(GtkApplication *app,gpointer user_data) {
+void login();
 
+
+static void activate(GtkApplication *app,gpointer user_data) {
+    login();
 }
 
 
