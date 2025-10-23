@@ -7,6 +7,11 @@ void login();
 
 static void activate(GtkApplication *app,gpointer user_data) {
     login();
+
+    //Widgets for MainProgram
+    GtkWidget *windowMain;
+
+
 }
 
 void login() {
@@ -16,6 +21,14 @@ void login() {
     GtkWidget *labelPassword;
     GtkWidget *entryPassword;
     GtkWidget *buttonLogin;
+
+    //Initalization of windowLogin
+    windowLogin = gtk_window_new();
+    gtk_window_set_default_size(GTK_WINDOW(windowLogin),200,200);
+    gtk_window_set_title(GTK_WINDOW(windowLogin),"Login");
+    gtk_window_present(GTK_WINDOW(windowLogin));
+
+
 }
 
 int main(int argc, char **argv){
