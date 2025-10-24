@@ -54,7 +54,9 @@ void login() {
     entryPassword = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryPassword,1,1,1,1);
 
-
+    //init of buttonLogin
+    buttonLogin = gtk_button_new_with_label("Login");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonLogin,1,2,1,1);
 
 
 }
