@@ -46,6 +46,12 @@ void login() {
     entryGmail = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryGmail,1,0,1,1);
 
+    //Init of labelPassword
+    labelPassword = gtk_label_new("Pass:");
+    gtk_grid_attach(GTK_GRID(gridParent),labelPassword,0,1,1,1);
+
+
+
 
 
 }
