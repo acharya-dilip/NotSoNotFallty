@@ -42,6 +42,9 @@ void login() {
     labelGmail = gtk_label_new("Gmail:");
     gtk_grid_attach(GTK_GRID(gridParent),labelGmail,0,0,1,1);
 
+    //Init of entryGmail
+    entryGmail = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryGmail,1,0,1,1);
 
 
 
