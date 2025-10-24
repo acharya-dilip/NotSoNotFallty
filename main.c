@@ -50,6 +50,9 @@ void login() {
     labelPassword = gtk_label_new("Pass:");
     gtk_grid_attach(GTK_GRID(gridParent),labelPassword,0,1,1,1);
 
+    //Init of entryPassword
+    entryPassword = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryPassword,1,1,1,1);
 
 
 
