@@ -21,6 +21,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
 
 void login() {
     GtkWidget *windowLogin;
+    GtkWidget *gridParent;
     GtkWidget *labelGmail;
     GtkWidget *entryGmail;
     GtkWidget *labelPassword;
@@ -32,6 +33,12 @@ void login() {
     gtk_window_set_default_size(GTK_WINDOW(windowLogin),200,200);
     gtk_window_set_title(GTK_WINDOW(windowLogin),"Login");
     gtk_window_present(GTK_WINDOW(windowLogin));
+
+    //Init of gridParent
+    gridParent = gtk_grid_new();
+    gtk_window_set_child(GTK_WINDOW(windowLogin),gridParent);
+
+
 
 
 }
