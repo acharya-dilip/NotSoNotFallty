@@ -55,7 +55,9 @@ void login() {
 
     //Init of entryGmail
     entryGmail = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryGmail,1,0,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryGmail,1,0,5,1);
+    //Margins & Paddings
+    gtk_widget_set_size_request(entryGmail,170,-1);
 
     //Init of labelPassword
     labelPassword = gtk_label_new("Pass:");
@@ -66,11 +68,12 @@ void login() {
 
     //Init of entryPassword
     entryPassword = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryPassword,1,1,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryPassword,1,1,5,1);
+
 
     //init of buttonLogin
     buttonLogin = gtk_button_new_with_label("Login");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonLogin,1,2,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonLogin,1,2,5,1);
 
 
 }
