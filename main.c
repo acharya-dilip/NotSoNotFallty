@@ -30,7 +30,7 @@ void login() {
 
     //Initalization of windowLogin
     windowLogin = gtk_window_new();
-    gtk_window_set_default_size(GTK_WINDOW(windowLogin),200,200);
+    //gtk_window_set_default_size(GTK_WINDOW(windowLogin),200,200);
     gtk_window_set_title(GTK_WINDOW(windowLogin),"Login");
     gtk_window_present(GTK_WINDOW(windowLogin));
 
@@ -57,7 +57,7 @@ void login() {
     entryGmail = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryGmail,1,0,5,1);
     //Margins & Paddings
-    gtk_widget_set_size_request(entryGmail,170,-1);
+    gtk_widget_set_size_request(entryGmail,200,-1);
 
     //Init of labelPassword
     labelPassword = gtk_label_new("Pass:");
