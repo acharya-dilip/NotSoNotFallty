@@ -43,7 +43,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
     gtk_grid_attach(GTK_GRID(gridParent),buttonFilePath,0,0,1,1);
     g_signal_connect(buttonFilePath,"clicked",G_CALLBACK(navFolder),NULL);
     //Margins & Paddings
-    gtk_widget_set_size_request(buttonFilePath,30,-1);
+    gtk_widget_set_size_request(buttonFilePath,20,-1);
 
 
     //Init of buttonPush
@@ -58,7 +58,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //MArgins & Paddings
     gtk_widget_set_size_request(entryCommitTitle,300,-1);
     gtk_widget_set_margin_top(entryCommitTitle,10);
-    gtk_widget_set_margin_bottom(entryCommitTitle,10);
+    gtk_widget_set_margin_bottom(entryCommitTitle,6);
 
     //Init of labelCommitMsg
     labelCommitMsg = gtk_label_new("Commit Message:");
@@ -70,6 +70,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //Init of textviewCommitMessage
     textviewCommitMessage = gtk_text_view_new();
     gtk_grid_attach(GTK_GRID(gridParent),textviewCommitMessage,0,3,10,10);
+    gtk_text_view_set_wrap_mode(GTK_TEXT_VIEW(textviewCommitMessage), GTK_WRAP_WORD_CHAR);
     //Margins & Paddings
     gtk_widget_set_size_request(textviewCommitMessage,300,200);
     gtk_widget_set_margin_bottom(textviewCommitMessage,10);
