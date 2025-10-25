@@ -3,6 +3,7 @@
 #include <curl/curl.h>
 
 void login();
+void navFolder();
 
 //Globalised Variables
     GtkWidget *windowMain;
@@ -71,6 +72,11 @@ static void activate(GtkApplication *app,gpointer user_data) {
 
 
 }
+
+void navFolder() {
+
+}
+
 
 void login() {
     GtkWidget *windowLogin;
