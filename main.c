@@ -104,6 +104,11 @@ void initProject() {
     labelDir = gtk_label_new("Navigate to Project:");
     gtk_grid_attach(GTK_GRID(gridParent),labelDir,0,0,1,1);
 
+    //Init of entryDir
+    entryDir = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent)entryDir,0,1,5,1);
+
+
 
 
 }
