@@ -82,12 +82,13 @@ static void activate(GtkApplication *app,gpointer user_data) {
 
 
 }
+//Globalised stuff for initProject
+GtkWidget *entryDir;
 
 void initProject() {
     GtkWidget
     *windowInit,
     *gridParent,
-    *entryDir,
     *buttonNav,
     *buttonProceed;
 
@@ -118,6 +119,7 @@ void initProject() {
     //Init of buttonNav
     buttonNav = gtk_button_new_with_label("🗀");
     gtk_grid_attach(GTK_GRID(gridParent),buttonNav,5,1,1,1);
+    g_signal_connect(buttonNav,"clicked",G_CALLBACK(navFolder),NULL);
 
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
