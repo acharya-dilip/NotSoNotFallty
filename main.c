@@ -51,13 +51,18 @@ static void activate(GtkApplication *app,gpointer user_data) {
     entryCommitTitle = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryCommitTitle,0,1,10,1);
     //MArgins & Paddings
-    gtk_widget_set_size_request(entryCommitTitle,250,-1);
+    gtk_widget_set_size_request(entryCommitTitle,300,-1);
+    gtk_widget_set_margin_top(entryCommitTitle,10);
+    gtk_widget_set_margin_bottom(entryCommitTitle,10);
+
 
     //Init of textviewCommitMessage
     textviewCommitMessage = gtk_text_view_new();
     gtk_grid_attach(GTK_GRID(gridParent),textviewCommitMessage,0,2,10,10);
     //Margins & Paddings
-    gtk_widget_set_size_request(textviewCommitMessage,250,200);
+    gtk_widget_set_size_request(textviewCommitMessage,300,200);
+    gtk_widget_set_margin_bottom(textviewCommitMessage,10);
+
 
     //Init of buttonCommit
     buttonCommit = gtk_button_new_with_label("Commit");
