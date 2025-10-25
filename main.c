@@ -12,6 +12,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
 
     //Widgets for MainProgram
     GtkWidget
+    *gridParent,
     *buttonFilePath,
     *buttonPush,
     *entryCommitTitle,
@@ -24,6 +25,9 @@ static void activate(GtkApplication *app,gpointer user_data) {
     gtk_window_set_default_size(GTK_WINDOW(windowMain),600,600);
     gtk_window_present(GTK_WINDOW(windowMain));
 
+    //Init of gridParent
+    gridParent = gtk_grid_new();
+    gtk_window_set_child(GTK_WINDOW(windowMain),gridParent);
 
 }
 
