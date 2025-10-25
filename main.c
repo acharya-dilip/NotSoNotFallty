@@ -4,6 +4,7 @@
 
 void initProject();
 void navFolder();
+void updateFilePath();
 
 //Globalised Variables
     GtkWidget *windowMain;
@@ -138,7 +139,9 @@ void navFolder() {
     gtk_file_dialog_select_folder(dialogNav, windowNav, NULL,NULL,windowNav);
 }
 
+void updateFilePath() {
 
+}
 
 int main(int argc, char **argv){
     GtkApplication *app;
