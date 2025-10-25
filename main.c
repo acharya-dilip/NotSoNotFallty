@@ -106,9 +106,11 @@ void initProject() {
 
     //Init of entryDir
     entryDir = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent)entryDir,0,1,5,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryDir,0,1,5,1);
 
-
+    //Init of buttonNav
+    buttonNav = gtk_button_new_with_label("🗀");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonNav,5,1,1,1);
 
 
 }
