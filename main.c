@@ -8,7 +8,7 @@ void login();
     GtkWidget *windowMain;
 
 static void activate(GtkApplication *app,gpointer user_data) {
-    login();
+    //login();
 
     //Widgets for MainProgram
 
@@ -16,7 +16,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
     windowMain = gtk_application_window_new(app);
     gtk_window_set_title(GTK_WINDOW(windowMain),"NotSoNotSocial");
     gtk_window_set_default_size(GTK_WINDOW(windowMain),600,600);
-
+    gtk_window_present(GTK_WINDOW(windowMain));
 }
 
 void login() {
