@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.0)
-project(NotSoNotSocial C)
+project(NotSoNotFallty C)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRD ON)
@@ -16,7 +16,7 @@ link_directories(${GTK4_LIBRARY_DIRS})
 link_directories(${CURL_LIBRARY_DIRS})
 
 
-add_executable(NotSoNotSocial main.c
+add_executable(NotSoNotFallty main.c
 )
 
 target_link_libraries(${PROJECT_NAME}
