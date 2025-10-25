@@ -39,22 +39,27 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //Init of buttonFilePath
     buttonFilePath = gtk_button_new_with_label("📁");
     gtk_grid_attach(GTK_GRID(gridParent),buttonFilePath,0,0,1,1);
+    gtk_widget_set_size_request(buttonFilePath,30,-1);
+
 
     //Init of buttonPush
     buttonPush  = gtk_button_new_with_label("🌐");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,4,0,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,9,0,1,1);
+    gtk_widget_set_size_request(buttonPush,30,-1);
 
     //Init of entryCommitTitle
     entryCommitTitle = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryCommitTitle,0,1,5,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryCommitTitle,0,1,10,1);
+    //MArgins & Paddings
+    gtk_widget_set_size_request(entryCommitTitle,250,-1);
 
     //Init of textviewCommitMessage
     textviewCommitMessage = gtk_text_view_new();
-    gtk_grid_attach(GTK_GRID(gridParent),textviewCommitMessage,0,2,5,5);
+    gtk_grid_attach(GTK_GRID(gridParent),textviewCommitMessage,0,2,10,10);
 
     //Init of buttonCommit
     buttonCommit = gtk_button_new_with_label("Commit");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonCommit,0,7,5,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonCommit,0,13,10,1);
 
 
 
