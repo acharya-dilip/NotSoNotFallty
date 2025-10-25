@@ -87,7 +87,6 @@ void initProject() {
     GtkWidget
     *windowInit,
     *gridParent,
-    *labelDir,
     *entryDir,
     *buttonNav,
     *buttonProceed;
@@ -108,13 +107,13 @@ void initProject() {
     gtk_widget_set_valign(gridParent,GTK_ALIGN_CENTER);
 
 
-    //Init of labelDir
-    labelDir = gtk_label_new("Navigate to Project:");
-    gtk_grid_attach(GTK_GRID(gridParent),labelDir,0,0,1,1);
+
 
     //Init of entryDir
     entryDir = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryDir,0,1,5,1);
+    //Margins& Paddings
+    gtk_widget_set_size_request(entryDir,250,-1);
 
     //Init of buttonNav
     buttonNav = gtk_button_new_with_label("🗀");
