@@ -2,6 +2,7 @@
 #include <gtk/gtk.h>
 #include <curl/curl.h>
 
+void initProject();
 void navFolder();
 
 //Globalised Variables
@@ -78,6 +79,10 @@ static void activate(GtkApplication *app,gpointer user_data) {
     gtk_grid_attach(GTK_GRID(gridParent),buttonCommit,0,15,10,1);
 
 
+
+}
+
+void initProject() {
 
 }
 
