@@ -83,7 +83,12 @@ static void activate(GtkApplication *app,gpointer user_data) {
 }
 
 void initProject() {
-
+    GtkWidget
+    *windowInit,
+    *labelDir,
+    *entryDir,
+    *buttonNav,
+    *buttonProceed;
 }
 
 void navFolder() {
