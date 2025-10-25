@@ -9,7 +9,8 @@ void navFolder();
     GtkWidget *windowMain;
 
 static void activate(GtkApplication *app,gpointer user_data) {
-
+    //Executes the navigater window thingy
+    initProject();
     //Widgets for MainProgram
     GtkWidget
     *gridParent,
@@ -98,6 +99,12 @@ void initProject() {
     //Init of gridParent
     gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowInit),gridParent);
+
+    //Init of labelDir
+    labelDir = gtk_label_new("Navigate to Project:");
+    gtk_grid_attach(GTK_GRID(gridParent),labelDir,0,0,1,1);
+
+
 
 }
 
