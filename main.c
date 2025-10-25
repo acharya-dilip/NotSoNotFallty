@@ -129,7 +129,13 @@ void initProject() {
 }
 
 void navFolder() {
+    GtkWindow *windowNav = GTK_WINDOW(NULL);
+    GtkFileDialog *dialogNav = gtk_file_dialog_new();
 
+    GFile *home = g_file_new_for_path(g_get_home_dir());
+    gtk_file_dialog_set_initial_folder(dialogNav, home);
+    g_object_unref(home);
+    gtk_file_dialog_select_folder(dialogNav, windowNav, NULL,NULL,windowNav);
 }
 
 
