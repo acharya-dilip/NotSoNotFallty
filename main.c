@@ -29,6 +29,13 @@ static void activate(GtkApplication *app,gpointer user_data) {
     gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowMain),gridParent);
 
+    //Init of buttonFilePath
+    buttonFilePath = gtk_button_new_with_label("📁");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonFilePath,0,0,1,1);
+
+
+
+
 }
 
 void login() {
