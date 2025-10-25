@@ -60,12 +60,16 @@ static void activate(GtkApplication *app,gpointer user_data) {
     gtk_widget_set_margin_top(entryCommitTitle,10);
     gtk_widget_set_margin_bottom(entryCommitTitle,10);
 
-
+    //Init of labelCommitMsg
+    labelCommitMsg = gtk_label_new("Commit Message:");
+    gtk_grid_attach(GTK_GRID(gridParent),labelCommitMsg,0,2,10,1);
+    //Margins & Padding
+    gtk_widget_set_halign(labelCommitMsg,GTK_ALIGN_START);
 
 
     //Init of textviewCommitMessage
     textviewCommitMessage = gtk_text_view_new();
-    gtk_grid_attach(GTK_GRID(gridParent),textviewCommitMessage,0,2,10,10);
+    gtk_grid_attach(GTK_GRID(gridParent),textviewCommitMessage,0,3,10,10);
     //Margins & Paddings
     gtk_widget_set_size_request(textviewCommitMessage,300,200);
     gtk_widget_set_margin_bottom(textviewCommitMessage,10);
@@ -73,7 +77,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
 
     //Init of buttonCommit
     buttonCommit = gtk_button_new_with_label("Commit");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonCommit,0,13,10,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonCommit,0,15,10,1);
 
 
 
