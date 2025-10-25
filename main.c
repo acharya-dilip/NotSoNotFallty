@@ -33,6 +33,9 @@ static void activate(GtkApplication *app,gpointer user_data) {
     buttonFilePath = gtk_button_new_with_label("📁");
     gtk_grid_attach(GTK_GRID(gridParent),buttonFilePath,0,0,1,1);
 
+    //Init of buttonPush
+    buttonPush  = gtk_button_new_with_label("🌐");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,5,0,1,1);
 
 
 
