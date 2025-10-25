@@ -95,10 +95,18 @@ void initProject() {
     //Init of windowInit
     windowInit = gtk_window_new();
     gtk_window_set_title(GTK_WINDOW(windowInit),"Navigate to Project");
-
+    gtk_window_present(GTK_WINDOW(windowInit));
     //Init of gridParent
     gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowInit),gridParent);
+    //MArgins & Paddings
+    gtk_widget_set_margin_start(gridParent,10);
+    gtk_widget_set_margin_end(gridParent,10);
+    gtk_widget_set_margin_top(gridParent,10);
+    gtk_widget_set_margin_bottom(gridParent,10);
+    gtk_widget_set_halign(gridParent,GTK_ALIGN_CENTER);
+    gtk_widget_set_valign(gridParent,GTK_ALIGN_CENTER);
+
 
     //Init of labelDir
     labelDir = gtk_label_new("Navigate to Project:");
