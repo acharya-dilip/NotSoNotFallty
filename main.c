@@ -112,6 +112,10 @@ void initProject() {
     buttonNav = gtk_button_new_with_label("🗀");
     gtk_grid_attach(GTK_GRID(gridParent),buttonNav,5,1,1,1);
 
+    //Init of buttonProceed
+    buttonProceed = gtk_button_new_with_label("Proceed");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,0,2,6,1);
+
 
 }
 
