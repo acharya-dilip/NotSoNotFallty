@@ -40,6 +40,8 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //Init of buttonFilePath
     buttonFilePath = gtk_button_new_with_label("📁");
     gtk_grid_attach(GTK_GRID(gridParent),buttonFilePath,0,0,1,1);
+    g_signal_connect(buttonFilePath,"clicked",G_CALLBACK(navFolder),NULL);
+    //Margins & Paddings
     gtk_widget_set_size_request(buttonFilePath,30,-1);
 
 
