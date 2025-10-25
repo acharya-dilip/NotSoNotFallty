@@ -17,6 +17,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
     *buttonFilePath,
     *buttonPush,
     *entryCommitTitle,
+    *labelCommitMsg,
     *textviewCommitMessage,
     *buttonCommit;
 
@@ -53,10 +54,13 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //Init of entryCommitTitle
     entryCommitTitle = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryCommitTitle,0,1,10,1);
+    gtk_entry_set_placeholder_text(GTK_ENTRY(entryCommitTitle),"Enter Commit Title");
     //MArgins & Paddings
     gtk_widget_set_size_request(entryCommitTitle,300,-1);
     gtk_widget_set_margin_top(entryCommitTitle,10);
     gtk_widget_set_margin_bottom(entryCommitTitle,10);
+
+
 
 
     //Init of textviewCommitMessage
