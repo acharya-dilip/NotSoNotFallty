@@ -22,12 +22,19 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //Init of windowMain
     windowMain = gtk_application_window_new(app);
     gtk_window_set_title(GTK_WINDOW(windowMain),"NotSoNotFallty");
-    gtk_window_set_default_size(GTK_WINDOW(windowMain),600,600);
+    gtk_window_set_default_size(GTK_WINDOW(windowMain),270,320);
     gtk_window_present(GTK_WINDOW(windowMain));
 
     //Init of gridParent
     gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowMain),gridParent);
+    //Margins & Paddings
+    gtk_widget_set_margin_start(gridParent,10);
+    gtk_widget_set_margin_end(gridParent,10);
+    gtk_widget_set_margin_top(gridParent,10);
+    gtk_widget_set_margin_bottom(gridParent,10);
+    gtk_widget_set_halign(gridParent,GTK_ALIGN_CENTER);
+    gtk_widget_set_valign(gridParent,GTK_ALIGN_CENTER);
 
     //Init of buttonFilePath
     buttonFilePath = gtk_button_new_with_label("📁");
@@ -35,7 +42,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
 
     //Init of buttonPush
     buttonPush  = gtk_button_new_with_label("🌐");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,5,0,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,4,0,1,1);
 
     //Init of entryCommitTitle
     entryCommitTitle = gtk_entry_new();
