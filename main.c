@@ -37,6 +37,10 @@ static void activate(GtkApplication *app,gpointer user_data) {
     buttonPush  = gtk_button_new_with_label("🌐");
     gtk_grid_attach(GTK_GRID(gridParent),buttonPush,5,0,1,1);
 
+    //Init of entryCommitTitle
+    entryCommitTitle = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryCommitTitle,0,1,5,1);
+
 
 
 }
