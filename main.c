@@ -85,10 +85,17 @@ static void activate(GtkApplication *app,gpointer user_data) {
 void initProject() {
     GtkWidget
     *windowInit,
+
     *labelDir,
     *entryDir,
     *buttonNav,
     *buttonProceed;
+
+    //Init of windowInit
+    windowInit = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(windowInit),"Navigate to Project");
+
+
 }
 
 void navFolder() {
