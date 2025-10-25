@@ -85,7 +85,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
 void initProject() {
     GtkWidget
     *windowInit,
-
+    *gridParent,
     *labelDir,
     *entryDir,
     *buttonNav,
@@ -95,6 +95,9 @@ void initProject() {
     windowInit = gtk_window_new();
     gtk_window_set_title(GTK_WINDOW(windowInit),"Navigate to Project");
 
+    //Init of gridParent
+    gridParent = gtk_grid_new();
+    gtk_window_set_child(GTK_WINDOW(windowInit),gridParent);
 
 }
 
