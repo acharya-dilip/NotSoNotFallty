@@ -41,6 +41,10 @@ static void activate(GtkApplication *app,gpointer user_data) {
     entryCommitTitle = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryCommitTitle,0,1,5,1);
 
+    //Init of textviewCommitMessage
+    textviewCommitMessage = gtk_text_view_new();
+    gtk_grid_attach(GTK_GRID(gridParent),textviewCommitMessage,0,2,5,5);
+
 
 
 }
