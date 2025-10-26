@@ -262,6 +262,7 @@ void pushWindow() {
     //Init of buttonConfig
     buttonConfig = gtk_button_new_with_label("Config");
     gtk_header_bar_pack_start(GTK_HEADER_BAR(headerPush),buttonConfig);
+    g_signal_connect(buttonConfig, "clicked", G_CALLBACK(config),NULL);
 
     //Init of gridParent
     gridParent = gtk_grid_new();
@@ -314,7 +315,7 @@ void config() {
     gtk_window_set_titlebar(GTK_WINDOW(windowConfig),headerConfig);
 
     //Init of buttonCreateGhRepo
-    buttonCreateGhRepo = gtk_button_new();
+    buttonCreateGhRepo = gtk_button_new_with_label("➕");
     gtk_header_bar_pack_start(GTK_HEADER_BAR(headerConfig),buttonCreateGhRepo);
 
     //Init of gridParent
@@ -335,6 +336,8 @@ void config() {
     //Init of entryUsername
     entryUsername = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryUsername,1,0,4,1);
+    //Margins & Paddings
+    gtk_widget_set_size_request(entryUsername,200,-1);
 
     //Init of labelToken
     labelToken = gtk_label_new("PA Token:");
@@ -345,8 +348,8 @@ void config() {
     gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,1,4,1);
 
     //Init of buttonProceed
-    buttonProceed = gtk_button_new_with_label("proceed");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,0,3,5,1);
+    buttonProceed = gtk_button_new_with_label("Proceed");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,1,3,4,1);
 
 
 
