@@ -61,6 +61,10 @@ void initProject() {
 }
 
 void fetchFilePath() {
+    FILE *file = fopen("filePath.txt","a");
+    fscanf(file,"%s",filepath);
+    fclose(file);
+    gtk_editable_set_text(GTK_EDITABLE(entryDir),filepath);
 
 }
 
@@ -91,6 +95,7 @@ void updateFilePath() {
     FILE *file = fopen("filePath.txt","a");
     fprintf(file,
         "%s",filepath);
+    fclose(file);
     gtk_window_destroy(GTK_WINDOW(windowInit));
 }
 
