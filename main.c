@@ -10,6 +10,7 @@ void fetchFilePath();
 
 void initgitrepo();
 void initghrepo();
+void createghrepo();
 
 void commit();
 void clearCommitInfo();
@@ -143,15 +144,17 @@ void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data) {
 
 }
 
+//Globalised variables
+GtkWindow
+    *windowGhRepo,
+    *entryRepoName,
+    *entryVisibility;
 
 void initghrepo() {
     GtkWidget
-    *windowGhRepo,
     *gridParent,
     *labelRepoName,
-    *entryRepoName,
     *labelVisibility,
-    *entryVisibility,
     *buttonCreateGhRepo;
 
     //Init of windowGhRepo
@@ -197,9 +200,16 @@ void initghrepo() {
     //Init of buttonCreateGhRepo
     buttonCreateGhRepo = gtk_button_new_with_label("Create Repository");
     gtk_grid_attach(GTK_GRID(gridParent),buttonCreateGhRepo,1,2,4,1);
+    g_signal_connect(buttonCreateGhRepo,"clicked",G_CALLBACK(createghrepo),NULL);
+
+}
+
+void createghrepo(){
+
 
 
 }
+
 
 
 //Globalised Variables
@@ -478,6 +488,7 @@ void config() {
     entryToken = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,2,8,1);
     gtk_entry_set_placeholder_text(GTK_ENTRY(entryToken),"Enter Personal Access Token");
+    gtk_entry_set_visibility(GTK_ENTRY(entryToken),FALSE);
     //fetch git credentials
     fetchGitCredentials();
 
