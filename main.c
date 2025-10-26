@@ -141,7 +141,11 @@ void navFolder() {
 }
 
 void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data) {
-    
+    GtkFileDialog *dialogNav = GTK_FILE_DIALOG(source);
+    GFile *folder = gtk_file_dialog_select_folder_finish(dialogNav, res, NULL);
+    char *path = g_file_get_path(folder);
+    //g_print("Selected folder: %s\n", path);
+
 }
 
 int main(int argc, char **argv){
