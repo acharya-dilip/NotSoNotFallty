@@ -8,6 +8,8 @@ void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data);
 void updateFilePath();
 void fetchFilePath();
 
+void initgitrepo();
+
 void commit();
 void clearCommitInfo();
 
@@ -73,6 +75,12 @@ void initProject() {
 
 
 }
+
+void initgitrepo() {
+
+}
+
+
 
 void fetchFilePath() {
     FILE *file = fopen("filePath.txt","a");
