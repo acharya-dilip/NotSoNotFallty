@@ -23,6 +23,7 @@ void fetchGitCredentials();
 
 //Global Variables
 char filepath[256];
+char remoterepo[256];
 
 
 //Globalised stuff for initProject
@@ -398,6 +399,11 @@ void updateRemoteRepo() {
 
 
 void fetchRemoteRepo() {
+    //Scans the remote repo url from ghrepo.txt
+    FILE *file = fopen("ghrepo.txt","r");
+    fscanf(file,"%s",remoterepo);
+    fclose(file);
+    gtk_editable_set_text(GTK_EDITABLE(entryRepo),remoterepo);
 
 }
 
