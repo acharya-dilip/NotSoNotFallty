@@ -9,6 +9,7 @@ void updateFilePath();
 void fetchFilePath();
 
 void initgitrepo();
+void initghrepi();
 
 void commit();
 void clearCommitInfo();
@@ -92,7 +93,9 @@ void initgitrepo() {
     snprintf(temp,sizeof(temp),"cd %s && git init",filepath);
     system(temp);
 }
+void initghrepo() {
 
+}
 
 
 void fetchFilePath() {
