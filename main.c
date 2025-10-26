@@ -184,7 +184,6 @@ void initghrepo() {
     gtk_widget_set_halign(labelVisibility,GTK_ALIGN_END);
     gtk_widget_set_margin_end(labelVisibility,10);
 
-
     //Init of entryVisibility
     entryVisibility = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryVisibility,1,1,4,1);
@@ -194,8 +193,9 @@ void initghrepo() {
     gtk_grid_attach(GTK_GRID(gridParent),buttonCreateGhRepo,1,2,4,1);
 
 
-
 }
+
+
 //Globalised Variables
     GtkWidget
     *entryCommitTitle,
@@ -354,12 +354,13 @@ void pushWindow() {
 
     //init of entryBranch
     entryBranch = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryBranch,1,0,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryBranch,1,0,4,1);
+    gtk_widget_set_size_request(entryBranch,220,-1);
     gtk_editable_set_text(GTK_EDITABLE(entryBranch),"master");
 
     //init of buttonPush
     buttonPush = gtk_button_new_with_label("Push");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,1,1,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,1,1,4,1);
     g_signal_connect(buttonPush,"clicked",G_CALLBACK(push),NULL);
 
 
