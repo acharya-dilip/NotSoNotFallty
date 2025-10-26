@@ -344,7 +344,7 @@ void config() {
     //Init of entryRepo
     entryRepo = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryRepo,1,0,4,1);
-
+    gtk_entry_set_placeholder_text(GTK_ENTRY(entryRepo),"Enter Github Repo URL");
 
     //Init of labelUsername
     labelUsername = gtk_label_new("Username:");
@@ -353,6 +353,8 @@ void config() {
     //Init of entryUsername
     entryUsername = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryUsername,1,1,4,1);
+    gtk_entry_set_placeholder_text(GTK_ENTRY(entryUsername),"Enter Github Username");
+
     //Margins & Paddings
     gtk_widget_set_size_request(entryUsername,250,-1);
 
@@ -363,6 +365,7 @@ void config() {
     //Init of entryToken
     entryToken = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,2,4,1);
+    gtk_entry_set_placeholder_text(GTK_ENTRY(entryToken),"Enter Personal Access Token");
 
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
