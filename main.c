@@ -113,6 +113,9 @@ void initghrepo() {
     gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowGhRepo),gridParent);
 
+    //Init of labelRepoName
+    labelRepoName = gtk_label_new("Repo Name:");
+    gtk_grid_attach(GTK_GRID(gridParent),labelRepoName,0,0,1,1);
 
 }
 
