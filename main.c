@@ -337,11 +337,10 @@ void push() {
 GtkWidget
     *entryRepo,
     *entryUsername,
-    *entryToken;
-
+    *entryToken,
+    *windowConfig;
 void config() {
     GtkWidget
-    *windowConfig,
     *headerConfig,
     *gridParent,
     *labelRepo,
@@ -415,6 +414,7 @@ void config() {
 void updateRemoteStuff() {
     updateRemoteRepo();
     updateGitCredentials();
+    gtk_window_destroy(windowConfig);
 }
 
 
@@ -463,6 +463,7 @@ void updateGitCredentials() {
               gtk_editable_get_text(GTK_EDITABLE(entryToken)));
 
     //You can also add git credential manager overrite thing with system()
+
 
 
 }
