@@ -103,6 +103,13 @@ void initghrepo() {
     *labelVisibility,
     *entryVisibility,
     *buttonCreateGhRepo;
+
+    //Init of windowGhRepo
+    windowGhRepo = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(windowGhRepo),"Create Github Repo");
+    gtk_window_present(GTK_WINDOW(windowGhRepo));
+
+
 }
 
 
