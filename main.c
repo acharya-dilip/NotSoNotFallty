@@ -303,6 +303,15 @@ void config() {
     *entryToken,
     *buttonProceed;
 
+    //Init of windowConfig
+    windowConfig = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(windowConfig),"Configure");
+    gtk_window_present(GTK_WINDOW(windowConfig));
+
+    //Init of headerConfig
+    headerConfig = gtk_header_bar_new();
+    gtk_window_set_titlebar(GTK_WINDOW(windowConfig),headerConfig);
+
 
 }
 
