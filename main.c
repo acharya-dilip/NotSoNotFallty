@@ -39,6 +39,10 @@ void initProject() {
     headerInitProj = gtk_header_bar_new();
     gtk_window_set_titlebar(GTK_WINDOW(windowInit),headerInitProj);
 
+    //Init of ButtonInitRepo
+    buttonInitRepo = gtk_button_new_with_label("➕");
+    gtk_header_bar_pack_start(GTK_HEADER_BAR(headerInitProj),buttonInitRepo);
+
 
     //Init of gridParent
     gridParent = gtk_grid_new();
