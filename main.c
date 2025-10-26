@@ -307,23 +307,22 @@ void pushWindow() {
 
 
 void push() {
-
-    // char authurl[256];
-    // snprintf(authurl,sizeof(authurl)," https://%s:%s@%s ",
-    //     ghusername,
-    //     patoken,
-    //     remoterepo);
-    // char command[400];
-    // snprintf(command,sizeof(command),"cd %s && git push %s %s",
-    //     filepath,
-    //     authurl,
-    //     gtk_editable_get_text(GTK_EDITABLE(entryBranch)));
-
-    char command[256];
+    char authurl[256];
+     snprintf(authurl,sizeof(authurl)," https://%s:%s@%s ",
+         ghusername,
+         patoken,
+         remoterepo);
+    char command[400];
+     snprintf(command,sizeof(command),"cd %s && git push %s %s",
+         filepath,
+         authurl,
+         gtk_editable_get_text(GTK_EDITABLE(entryBranch)));
+    if (system(command)!=0){
     snprintf(command,sizeof(command),"cd %s && git push origin %s",
         filepath,
         gtk_editable_get_text(GTK_EDITABLE(entryBranch)));
     system(command);
+    }
 }
 
 //Globalised Variables
