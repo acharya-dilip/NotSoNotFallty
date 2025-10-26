@@ -298,6 +298,7 @@ void pushWindow() {
 }
 //Globalised Variables
 GtkWidget
+    *entryRepo,
     *entryUsername,
     *entryToken;
 
@@ -308,7 +309,6 @@ void config() {
     *buttonCreateGhRepo,
     *gridParent,
     *labelRepo,
-    *entryRepo,
     *labelUsername,
     *labelToken,
     *buttonProceed;
@@ -377,6 +377,23 @@ void config() {
 
 void updateRemoteRepo() {
 
+    FILE *pf = fopen("ghrepo.txt","a") fclose(pf); //checks if there's a file named ghrepo.txt if not creates tge file
+    //Writes the repo url to the ghrepo.txt file
+    FILE *file = fopen("ghrepo.txt","w");
+    fprintf(file,"%s",
+                    gtk_editable_get_text(GTK_EDITABLE(entryRepo)));
+    fclose(file);
+
+    char temp[512];
+    snprintf(temp,sizeof(temp),"cd filepath && git remote set-url origin %s",
+    filepath,
+    gtk_editable_get_text(GTK_EDITABLE(entryRepo));
+    if (system(temp!=0){
+        snprintf(temp,sizeof(temp),"cd filepath && git remote add origin %s",
+                                     filepath,
+                                     gtk_editable_get_text(GTK_EDITABLE(entryRepo));
+        }
+    )
 }
 
 void fetchRemoteRepo() {
