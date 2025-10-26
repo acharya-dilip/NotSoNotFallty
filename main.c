@@ -385,11 +385,11 @@ void updateRemoteRepo() {
     fclose(file);
 
     char temp[512];
-    snprintf(temp,sizeof(temp),"cd filepath && git remote set-url origin %s",
+    snprintf(temp,sizeof(temp),"cd %s && git remote set-url origin %s",
     filepath,
     gtk_editable_get_text(GTK_EDITABLE(entryRepo));
     if (system(temp!=0){
-        snprintf(temp,sizeof(temp),"cd filepath && git remote add origin %s",
+        snprintf(temp,sizeof(temp),"cd %s && git remote add origin %s",
                                      filepath,
                                      gtk_editable_get_text(GTK_EDITABLE(entryRepo));
         }
