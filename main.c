@@ -26,12 +26,20 @@ void initProject() {
     GtkWidget
     *gridParent,
     *buttonNav,
-    *buttonProceed;
+    *buttonProceed,
+    *headerInitProj,
+    *buttonInitRepo;
 
     //Init of windowInit
     windowInit = gtk_window_new();
     gtk_window_set_title(GTK_WINDOW(windowInit),"Navigate to Project");
     gtk_window_present(GTK_WINDOW(windowInit));
+
+    //Init of headerInitProj
+    headerInitProj = gtk_header_bar_new();
+    gtk_window_set_titlebar(GTK_WINDOW(windowInit),headerInitProj);
+
+
     //Init of gridParent
     gridParent = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(windowInit),gridParent);
