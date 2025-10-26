@@ -73,18 +73,24 @@ void initProject() {
     entryDir = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryDir,0,1,5,1);
     //Margins& Paddings
-    gtk_widget_set_size_request(entryDir,250,-1);
+    gtk_widget_set_size_request(entryDir,280,-1);
     //Call fetchFilePath to see if any previous dir is stored
     fetchFilePath();
+
+
     //Init of buttonNav
     buttonNav = gtk_button_new_with_label("🗀");
     gtk_grid_attach(GTK_GRID(gridParent),buttonNav,5,1,1,1);
     g_signal_connect(buttonNav,"clicked",G_CALLBACK(navFolder),NULL);
+    //MArgins & Paddings
+    gtk_widget_set_margin_start(buttonNav,10);
 
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
     gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,0,2,6,1);
     g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateFilePath),NULL);
+    //MArgins & Paddings
+    gtk_widget_set_margin_top(buttonProceed,10);
 
 
 }
