@@ -222,6 +222,10 @@ void push() {
     headerPush = gtk_header_bar_new();
     gtk_window_set_titlebar(GTK_WINDOW(windowPush),headerPush);
 
+    //Init of buttonConfig
+    buttonConfig = gtk_button_new_with_label("Config");
+    gtk_header_bar_pack_start(headerPush,buttonConfig);
+
 }
 
 int main(int argc, char **argv){
