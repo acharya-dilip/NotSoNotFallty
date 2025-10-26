@@ -440,7 +440,7 @@ void config() {
 
     //Init of entryRepo
     entryRepo = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryRepo,1,0,4,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryRepo,1,0,8,1);
     gtk_entry_set_placeholder_text(GTK_ENTRY(entryRepo),"Enter Github Repo URL");
     //fetch the stored remote repo if there's one
     fetchRemoteRepo();
@@ -454,10 +454,10 @@ void config() {
 
     //Init of entryUsername
     entryUsername = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryUsername,1,1,4,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryUsername,1,1,8,1);
     gtk_entry_set_placeholder_text(GTK_ENTRY(entryUsername),"Enter Github Username");
     //Margins & Paddings
-    gtk_widget_set_size_request(entryUsername,250,-1);
+    gtk_widget_set_size_request(entryUsername,360,-1);
 
     //Init of labelToken
     labelToken = gtk_label_new("PA Token:");
@@ -468,14 +468,14 @@ void config() {
 
     //Init of entryToken
     entryToken = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,2,4,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,2,8,1);
     gtk_entry_set_placeholder_text(GTK_ENTRY(entryToken),"Enter Personal Access Token");
     //fetch git credentials
     fetchGitCredentials();
 
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,1,4,4,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,1,4,8,1);
     g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateRemoteStuff),NULL);
 
 
