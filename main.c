@@ -127,7 +127,11 @@ void initghrepo() {
 
     //Init of entryVisibility
     entryVisibility = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryVisibility,1,1,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryVisibility,1,1,4,1);
+
+    //Init of buttonCreateGhRepo
+    buttonCreateGhRepo = gtk_button_new_with_label("Create Repository");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonCreateGhRepo,1,2,4,1);
 
 
 }
