@@ -414,7 +414,7 @@ void config() {
 void updateRemoteStuff() {
     updateRemoteRepo();
     updateGitCredentials();
-    gtk_window_destroy(windowConfig);
+    gtk_window_destroy(GTK_WINDOW(windowConfig));
 }
 
 
