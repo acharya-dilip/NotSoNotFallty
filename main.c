@@ -112,6 +112,10 @@ static void activate(GtkApplication *app,gpointer user_data) {
     headerMainWindow = gtk_header_bar_new();
     gtk_window_set_titlebar(GTK_WINDOW(windowMain),headerMainWindow);
 
+    //Init of buttonPush
+    buttonPush = gtk_button_new_with_label("🌐");
+    gtk_header_bar_pack_start(GTK_HEADER_BAR(headerMainWindow),buttonPush);
+
 
     //Init of gridParent
     gridParent = gtk_grid_new();
