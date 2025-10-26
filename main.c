@@ -336,7 +336,6 @@ void config() {
     GtkWidget
     *windowConfig,
     *headerConfig,
-    *buttonCreateGhRepo,
     *gridParent,
     *labelRepo,
     *labelUsername,
@@ -351,10 +350,6 @@ void config() {
     //Init of headerConfig
     headerConfig = gtk_header_bar_new();
     gtk_window_set_titlebar(GTK_WINDOW(windowConfig),headerConfig);
-
-    //Init of buttonCreateGhRepo
-    buttonCreateGhRepo = gtk_button_new_with_label("➕");
-    gtk_header_bar_pack_start(GTK_HEADER_BAR(headerConfig),buttonCreateGhRepo);
 
     //Init of gridParent
     gridParent = gtk_grid_new();
