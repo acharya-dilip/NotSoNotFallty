@@ -77,7 +77,9 @@ void initProject() {
 }
 
 void initgitrepo() {
-
+    char temp[256];
+    snprintf(temp,sizeof(temp),"cd %s && git init",filepath);
+    system(temp);
 }
 
 
