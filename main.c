@@ -4,7 +4,7 @@
 
 void initProject();
 void navFolder();
-void fetchFilePath();
+void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data);
 
 //Globalised Variables
     GtkWidget *windowMain;
@@ -125,7 +125,7 @@ void initProject() {
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
     gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,0,2,6,1);
-    g_signal_connect(buttonProceed,"clicked",G_CALLBACK(fetchFilePath),NULL);
+    //g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateFilePath),NULL);
 
 
 }
@@ -137,11 +137,11 @@ void navFolder() {
     GFile *home = g_file_new_for_path(g_get_home_dir());
     gtk_file_dialog_set_initial_folder(dialogNav, home);
     g_object_unref(home);
-    gtk_file_dialog_select_folder(dialogNav, windowNav, NULL,updatFilePath,windowNav);
+    gtk_file_dialog_select_folder(dialogNav, windowNav, NULL,setFilePath,windowNav);
 }
 
-void fetchFilePath() {
-
+void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data) {
+    
 }
 
 int main(int argc, char **argv){
