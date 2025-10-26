@@ -337,6 +337,9 @@ void config() {
     entryToken = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,1,4,1);
 
+    //Init of buttonProceed
+    buttonProceed = gtk_button_new_with_label("proceed");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,0,3,5,1);
 
 
 
