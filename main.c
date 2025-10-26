@@ -14,6 +14,7 @@ void commit();
 void clearCommitInfo();
 
 void pushWindow();
+void push();
 
 void config();
 void updateRemoteRepo();
@@ -248,6 +249,9 @@ void clearCommitInfo() {
     gtk_text_buffer_set_text(tempbuffer,"",-1);
 }
 
+//Globalised Variables
+GtkWidget
+    *entryBranch;
 void pushWindow() {
     GtkWidget
     *windowPush,
@@ -255,7 +259,6 @@ void pushWindow() {
     *buttonConfig,
     *gridParent,
     *labelBranch,
-    *entryBranch,
     *buttonPush;
 
     //init of windowPush
@@ -297,9 +300,30 @@ void pushWindow() {
     //init of buttonPush
     buttonPush = gtk_button_new_with_label("Push");
     gtk_grid_attach(GTK_GRID(gridParent),buttonPush,1,1,1,1);
+    g_signal_connect(buttonPush,"clicked",G_CALLBACK(push),NULL);
 
 
 }
+
+
+void push() {
+
+    char authurl[256];
+    snprintf(authurl,sizeof(authurl)," https://%s:%s@%s ",
+        ghusername,
+        patoken,
+        remoterepo);
+    char command[400];
+    snprintf(command,sizeof(command),"cd %s && git push %s %s",
+        filepath,
+        authurl,
+        gtk_editable_get_text(GTK_EDITABLE(entryBranch)));
+    system(command);
+}
+
+
+
+
 //Globalised Variables
 GtkWidget
     *entryRepo,
