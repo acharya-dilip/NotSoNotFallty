@@ -24,6 +24,8 @@ void fetchGitCredentials();
 //Global Variables
 char filepath[256];
 char remoterepo[256];
+char ghusername[128];
+char patoken[128];
 
 
 //Globalised stuff for initProject
@@ -417,10 +419,17 @@ void updateGitCredentials() {
         gtk_editable_get_text(GTK_EDITABLE(entryUsername)),
               gtk_editable_get_text(GTK_EDITABLE(entryToken)));
 
+    //You can also add git credential manager overrite thing with system()
+
 }
 
 void fetchGitCredentials() {
-
+    FILE *file = fopen("credentials.txt","r");
+    fscanf(file,"%s %s",
+        ghusername,
+        patoken);
+    gtk_editable_set_text(GTK_EDITABLE(entryUsername),ghusername);
+    gtk_editable_set_text(GTK_EDITABLE(entryToken),patoken);
 }
 
 
