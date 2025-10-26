@@ -132,6 +132,14 @@ void updateFilePath() {
     *windowMain;
 
 static void activate(GtkApplication *app,gpointer user_data) {
+    GtkCssProvider *provider = gtk_css_provider_new();
+    gtk_css_provider_load_from_path(provider, "styles.css");
+
+    gtk_style_context_add_provider_for_display(
+        gdk_display_get_default(),
+        GTK_STYLE_PROVIDER(provider),
+        GTK_STYLE_PROVIDER_PRIORITY_USER
+    );
     //Executes the navigater window thingy
     initProject();
     //Widgets for MainProgram
@@ -291,6 +299,7 @@ int main(int argc, char **argv){
     g_signal_connect (app, "activate", G_CALLBACK (activate), NULL);
     status = g_application_run (G_APPLICATION (app), argc, argv);
     g_object_unref (app);
+
 
 
     return status;
