@@ -338,14 +338,15 @@ GtkWidget
     *entryUsername,
     *entryToken,
     *windowConfig;
+
 void config() {
     GtkWidget
-    *headerConfig,
-    *gridParent,
-    *labelRepo,
-    *labelUsername,
-    *labelToken,
-    *buttonProceed;
+            *headerConfig,
+            *gridParent,
+            *labelRepo,
+            *labelUsername,
+            *labelToken,
+            *buttonProceed;
 
     //Init of windowConfig
     windowConfig = gtk_window_new();
@@ -370,6 +371,9 @@ void config() {
     //Init of labelrepo
     labelRepo = gtk_label_new("Github Repo:");
     gtk_grid_attach(GTK_GRID(gridParent),labelRepo,0,0,1,1);
+    //Margins & Paddings
+    gtk_widget_set_margin_end(labelRepo,10);
+    gtk_widget_set_halign(labelRepo,GTK_ALIGN_END);
 
     //Init of entryRepo
     entryRepo = gtk_entry_new();
@@ -381,18 +385,23 @@ void config() {
     //Init of labelUsername
     labelUsername = gtk_label_new("Username:");
     gtk_grid_attach(GTK_GRID(gridParent),labelUsername,0,1,1,1);
+    //Margins & Paddings
+    gtk_widget_set_margin_end(labelUsername,10);
+    gtk_widget_set_halign(labelUsername,GTK_ALIGN_END);
 
     //Init of entryUsername
     entryUsername = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryUsername,1,1,4,1);
     gtk_entry_set_placeholder_text(GTK_ENTRY(entryUsername),"Enter Github Username");
-
     //Margins & Paddings
     gtk_widget_set_size_request(entryUsername,250,-1);
 
     //Init of labelToken
     labelToken = gtk_label_new("PA Token:");
     gtk_grid_attach(GTK_GRID(gridParent),labelToken,0,2,1,1);
+    //Margins & Paddings
+    gtk_widget_set_margin_end(labelToken,10);
+    gtk_widget_set_halign(labelToken,GTK_ALIGN_END);
 
     //Init of entryToken
     entryToken = gtk_entry_new();
@@ -408,7 +417,6 @@ void config() {
 
 
 }
-
 
 void updateRemoteStuff() {
     updateRemoteRepo();
