@@ -348,6 +348,8 @@ void config() {
     entryRepo = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryRepo,1,0,4,1);
     gtk_entry_set_placeholder_text(GTK_ENTRY(entryRepo),"Enter Github Repo URL");
+    //fetch the stored remote repo if there's one
+    fetchRemoteRepo();
 
     //Init of labelUsername
     labelUsername = gtk_label_new("Username:");
@@ -373,6 +375,8 @@ void config() {
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
     gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,1,4,4,1);
+    g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateRemoteRepo),NULL);
+    g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateGitCredentials),NULL);
 
 
 
