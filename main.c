@@ -121,9 +121,14 @@ void initghrepo() {
     entryRepoName = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryRepoName,1,0,4,1);
 
-    //Init of labelRepoName
+    //Init of labelVisibility
     labelVisibility = gtk_label_new("Visibility");
     gtk_grid_attach(GTK_GRID(gridParent),labelVisibility,0,1,1,1);
+
+    //Init of entryVisibility
+    entryVisibility = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryVisibility,1,1,1,1);
+
 
 }
 
