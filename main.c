@@ -307,6 +307,10 @@ void pushWindow() {
 
 
 void push() {
+    //fetch the stuff need
+    fetchRemoteRepo();
+    fetchGitCredentials();
+
     char authurl[256];
     char repourlclean[512];
        strcpy(repourlclean,strstr(remoterepo,"github.com"));
