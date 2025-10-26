@@ -318,6 +318,7 @@ void push() {
          authurl,
          gtk_editable_get_text(GTK_EDITABLE(entryBranch)));
     if (system(command)!=0){
+        printf("fallback for push is triggered");
     snprintf(command,sizeof(command),"cd %s && git push origin %s",
         filepath,
         gtk_editable_get_text(GTK_EDITABLE(entryBranch)));
