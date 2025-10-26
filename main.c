@@ -141,7 +141,7 @@ void updateFilePath() {
     *entryCommitTitle,
     *textviewCommitMessage,
     *windowMain;
-
+//for a test
 static void activate(GtkApplication *app,gpointer user_data) {
     GtkCssProvider *provider = gtk_css_provider_new();
     gtk_css_provider_load_from_path(provider, "styles.css");
@@ -321,8 +321,7 @@ void push() {
     system(command);
 }
 
-
-
+//I'm bored help meeeee goddddddd I want outtttttt
 
 //Globalised Variables
 GtkWidget
