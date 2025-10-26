@@ -238,6 +238,12 @@ void push() {
     gtk_widget_set_halign(gridParent,GTK_ALIGN_CENTER);
     gtk_widget_set_valign(gridParent,GTK_ALIGN_CENTER);
 
+    //Init of labelBranch
+    labelBranch = gtk_label_new("Push to Branch:");
+    gtk_grid_attach(GTK_GRID(gridParent),labelBranch,0,0,1,1);
+    //MArgins & Paddings
+    gtk_widget_set_margin_end(labelBranch,10);
+
 }
 
 int main(int argc, char **argv){
