@@ -82,6 +82,10 @@ void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data) {
 void updateFilePath() {
     //sets the filepath var to the file path in the entry
     strcpy(filepath,gtk_editable_get_text(GTK_EDITABLE(entryDir)));
+    //Writing the filepath to a txt file for persistancy
+    FILE *file = fopen("filePath.txt","a");
+    fprintf(file,
+        "%s",filepath);
     gtk_window_destroy(GTK_WINDOW(windowInit));
 }
 
@@ -187,7 +191,6 @@ void clearCommitInfo() {
     gtk_editable_set_text(GTK_EDITABLE(entryCommitTitle),"");
     GtkTextBuffer *tempbuffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(textviewCommitMessage));
     gtk_text_buffer_set_text(tempbuffer,"",-1);
-
 }
 
 
