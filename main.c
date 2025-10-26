@@ -11,6 +11,8 @@ void fetchFilePath();
 void commit();
 void clearCommitInfo();
 
+void push();
+
 //Global Variables
 char filepath[256];
 
@@ -203,7 +205,9 @@ void clearCommitInfo() {
     gtk_text_buffer_set_text(tempbuffer,"",-1);
 }
 
+void push() {
 
+}
 
 int main(int argc, char **argv){
     GtkApplication *app;
