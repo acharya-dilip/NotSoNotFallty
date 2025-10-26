@@ -15,6 +15,8 @@ void clearCommitInfo();
 
 void pushWindow();
 
+void config();
+
 //Global Variables
 char filepath[256];
 
@@ -289,6 +291,12 @@ void pushWindow() {
 
 
 }
+
+void config() {
+
+}
+
+
 
 int main(int argc, char **argv){
     FILE *file = fopen("filePath.txt","a");
