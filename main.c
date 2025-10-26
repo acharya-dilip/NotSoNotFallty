@@ -341,6 +341,10 @@ void config() {
     labelRepo = gtk_label_new("Github Repo:");
     gtk_grid_attach(GTK_GRID(gridParent),labelRepo,0,0,1,1);
 
+    //Init of entryRepo
+    entryRepo = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryRepo,1,0,4,1);
+
 
     //Init of labelUsername
     labelUsername = gtk_label_new("Username:");
