@@ -220,7 +220,6 @@ void createghrepo(){
 
 }
 
-
 //Globalised Variables
     GtkWidget
     *entryCommitTitle,
@@ -390,9 +389,7 @@ void pushWindow() {
     //Margins & Paddings
     gtk_widget_set_margin_top(buttonPush,4);
 
-
 }
-
 
 void push() {
     //fetch the stuff need
@@ -506,7 +503,6 @@ void config() {
     gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,1,4,8,1);
     g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateRemoteStuff),NULL);
 
-
 }
 
 void updateRemoteStuff() {
@@ -514,8 +510,6 @@ void updateRemoteStuff() {
     updateGitCredentials();
     gtk_window_destroy(GTK_WINDOW(windowConfig));
 }
-
-
 
 void updateRemoteRepo() {
     //checks if there's a file named ghrepo.txt if not creates tge file
@@ -585,8 +579,6 @@ int main(int argc, char **argv){
     g_signal_connect (app, "activate", G_CALLBACK (activate), NULL);
     status = g_application_run (G_APPLICATION (app), argc, argv);
     g_object_unref (app);
-
-
 
     return status;
 }
