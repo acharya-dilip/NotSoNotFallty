@@ -307,13 +307,14 @@ void pushWindow() {
 
 
 void push() {
-    //test commit
     char authurl[256];
-    gchar *repourlclean = strstr(remoterepo,"github.com");
+    char repourlclean[512];
+       strcpy(repourlclean,strstr(remoterepo,"github.com"));
      snprintf(authurl,sizeof(authurl)," https://%s:%s@%s ",
          ghusername,
          patoken,
          repourlclean);
+    printf("%s",authurl);
     char command[400];
      snprintf(command,sizeof(command),"cd %s && git push %s %s",
          filepath,
@@ -443,7 +444,7 @@ void fetchRemoteRepo() {
     FILE *file = fopen("ghrepo.txt","r");
     fscanf(file,"%s",remoterepo);
     fclose(file);
-
+    printf("%s",remoterepo);
     gtk_editable_set_text(GTK_EDITABLE(entryRepo),remoterepo);
 
 }
