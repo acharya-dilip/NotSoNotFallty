@@ -97,8 +97,6 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //Widgets for MainProgram
     GtkWidget
     *gridParent,
-    *buttonFilePath,
-    *buttonPush,
     *labelCommitMsg,
     *buttonCommit;
 
@@ -118,19 +116,6 @@ static void activate(GtkApplication *app,gpointer user_data) {
     gtk_widget_set_margin_bottom(gridParent,10);
     gtk_widget_set_halign(gridParent,GTK_ALIGN_CENTER);
     gtk_widget_set_valign(gridParent,GTK_ALIGN_CENTER);
-
-    // //Init of buttonFilePath
-    // buttonFilePath = gtk_button_new_with_label("📁");
-    // gtk_grid_attach(GTK_GRID(gridParent),buttonFilePath,0,0,1,1);
-    // g_signal_connect(buttonFilePath,"clicked",G_CALLBACK(navFolder),NULL);
-    // //Margins & Paddings
-    // gtk_widget_set_size_request(buttonFilePath,20,-1);
-
-
-    // //Init of buttonPush
-    // buttonPush  = gtk_button_new_with_label("🌐");
-    // gtk_grid_attach(GTK_GRID(gridParent),buttonPush,9,0,1,1);
-    // gtk_widget_set_size_request(buttonPush,30,-1);
 
     //Init of entryCommitTitle
     entryCommitTitle = gtk_entry_new();
