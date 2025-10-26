@@ -393,9 +393,9 @@ void updateRemoteRepo() {
         snprintf(temp,sizeof(temp),"cd %s && git remote add origin %s",
                                      filepath,
                                      gtk_editable_get_text(GTK_EDITABLE(entryRepo)));
-        }
-    )
+    }
 }
+
 
 void fetchRemoteRepo() {
 
