@@ -89,11 +89,12 @@ static void activate(GtkApplication *app,gpointer user_data) {
 
 }
 //Globalised stuff for initProject
-GtkWidget *entryDir;
+GtkWidget
+*windowInit,
+*entryDir;
 
 void initProject() {
     GtkWidget
-    *windowInit,
     *gridParent,
     *buttonNav,
     *buttonProceed;
@@ -153,7 +154,9 @@ void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data) {
 }
 
 void updateFilePath() {
+    //sets the filepath var to the file path in the entry
     strcpy(filepath,gtk_editable_get_text(GTK_EDITABLE(entryDir)));
+    gtk_window_destroy(GTK_WINDOW(windowInit));
 }
 
 
