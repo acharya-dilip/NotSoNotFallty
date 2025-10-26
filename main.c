@@ -98,6 +98,8 @@ static void activate(GtkApplication *app,gpointer user_data) {
     GtkWidget
     *gridParent,
     *labelCommitMsg,
+    *headerMainWindow,
+    *buttonPush,
     *buttonCommit;
 
     //Init of windowMain
@@ -105,6 +107,11 @@ static void activate(GtkApplication *app,gpointer user_data) {
     gtk_window_set_title(GTK_WINDOW(windowMain),"NotSoNotFallty");
     gtk_window_set_default_size(GTK_WINDOW(windowMain),270,320);
     gtk_window_present(GTK_WINDOW(windowMain));
+
+    //Init of headerMainWindow
+    headerMainWindow = gtk_header_bar_new();
+    gtk_window_set_titlebar(GTK_WINDOW(windowMain),headerMainWindow);
+
 
     //Init of gridParent
     gridParent = gtk_grid_new();
