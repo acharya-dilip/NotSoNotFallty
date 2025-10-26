@@ -131,6 +131,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //Init of buttonPush
     buttonPush = gtk_button_new_with_label("🌐");
     gtk_header_bar_pack_start(GTK_HEADER_BAR(headerMainWindow),buttonPush);
+    g_signal_connect(buttonPush,"clicked",G_CALLBACK(pushWindow),NULL);
 
 
     //Init of gridParent
