@@ -212,6 +212,10 @@ void createghrepo(){
         gtk_editable_get_text(GTK_EDITABLE(entryRepoName)),
         gtk_editable_get_text(GTK_EDITABLE(entryVisibility)));
     system(command);
+    fetchGitCredentials();
+    snprintf(remoterepo,sizeof(remoterepo),"https://github.com/%s/%s.git",
+        ghusername,
+        gtk_editable_get_text(GTK_EDITABLE(entryRepoName)));
     gtk_window_destroy(GTK_WINDOW(windowGhRepo));
 
 }
