@@ -6,6 +6,7 @@ void initProject();
 void navFolder();
 void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data);
 void updateFilePath();
+void fetchFilePath();
 
 void commit();
 void clearCommitInfo();
@@ -56,6 +57,10 @@ void initProject() {
     gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,0,2,6,1);
     g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateFilePath),NULL);
 
+
+}
+
+void fetchFilePath() {
 
 }
 
