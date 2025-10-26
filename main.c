@@ -297,6 +297,7 @@ void config() {
     *windowConfig,
     *headerConfig,
     *buttonCreateGhRepo,
+    *gridParent,
     *labelUsername,
     *entryUsername,
     *labelToken,
@@ -315,6 +316,18 @@ void config() {
     //Init of buttonCreateGhRepo
     buttonCreateGhRepo = gtk_button_new();
     gtk_header_bar_pack_start(GTK_HEADER_BAR(headerConfig),buttonCreateGhRepo);
+
+    //Init of gridParent
+    gridParent = gtk_grid_new();
+    gtk_window_set_child(GTK_WINDOW(windowConfig),gridParent);
+
+    //Init of labelUsername
+    labelUsername = gtk_label_new("Username:");
+    gtk_grid_attach(GTK_GRID(gridParent),labelUsername,0,0,1,1);
+
+
+
+
 
 }
 
