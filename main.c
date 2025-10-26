@@ -34,9 +34,7 @@ char patoken[128];
 GtkWidget
 *windowInit,
 *entryDir;
-
 void initProject() {
-
     GtkWidget
     *gridParent,
     *buttonNav,
@@ -271,7 +269,7 @@ void pushWindow() {
     gtk_window_set_titlebar(GTK_WINDOW(windowPush),headerPush);
 
     //Init of buttonConfig
-    buttonConfig = gtk_button_new_with_label("Config");
+    buttonConfig = gtk_button_new_with_label("🛠️");
     gtk_header_bar_pack_start(GTK_HEADER_BAR(headerPush),buttonConfig);
     g_signal_connect(buttonConfig, "clicked", G_CALLBACK(config),NULL);
 
@@ -465,8 +463,6 @@ void updateGitCredentials() {
 
     //You can also add git credential manager overrite thing with system()
 
-
-
 }
 
 void fetchGitCredentials() {
@@ -479,10 +475,6 @@ void fetchGitCredentials() {
     gtk_editable_set_text(GTK_EDITABLE(entryUsername),ghusername);
     gtk_editable_set_text(GTK_EDITABLE(entryToken),patoken);
 }
-
-
-
-
 
 
 int main(int argc, char **argv){
