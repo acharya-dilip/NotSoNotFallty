@@ -307,6 +307,8 @@ void config() {
     *headerConfig,
     *buttonCreateGhRepo,
     *gridParent,
+    *labelRepo,
+    *entryRepo,
     *labelUsername,
     *labelToken,
     *buttonProceed;
@@ -335,27 +337,32 @@ void config() {
     gtk_widget_set_halign(gridParent,GTK_ALIGN_CENTER);
     gtk_widget_set_valign(gridParent,GTK_ALIGN_CENTER);
 
+    //Init of labelrepo
+    labelRepo = gtk_label_new("Github Repo:");
+    gtk_grid_attach(GTK_GRID(gridParent),labelRepo,0,0,1,1);
+
+
     //Init of labelUsername
     labelUsername = gtk_label_new("Username:");
-    gtk_grid_attach(GTK_GRID(gridParent),labelUsername,0,0,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),labelUsername,0,1,1,1);
 
     //Init of entryUsername
     entryUsername = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryUsername,1,0,4,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryUsername,1,1,4,1);
     //Margins & Paddings
-    gtk_widget_set_size_request(entryUsername,200,-1);
+    gtk_widget_set_size_request(entryUsername,250,-1);
 
     //Init of labelToken
     labelToken = gtk_label_new("PA Token:");
-    gtk_grid_attach(GTK_GRID(gridParent),labelToken,0,1,1,1);
+    gtk_grid_attach(GTK_GRID(gridParent),labelToken,0,2,1,1);
 
     //Init of entryToken
     entryToken = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,1,4,1);
+    gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,2,4,1);
 
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,1,3,4,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,1,4,4,1);
 
 
 
