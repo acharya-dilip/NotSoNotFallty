@@ -113,9 +113,6 @@ void initProject() {
     gtk_widget_set_halign(gridParent,GTK_ALIGN_CENTER);
     gtk_widget_set_valign(gridParent,GTK_ALIGN_CENTER);
 
-
-
-
     //Init of entryDir
     entryDir = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryDir,0,1,5,1);
@@ -156,7 +153,7 @@ void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data) {
 }
 
 void updateFilePath() {
-
+    strcpy(filepath,gtk_editable_get_text(GTK_EDITABLE(entryDir)));
 }
 
 
