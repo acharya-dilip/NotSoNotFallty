@@ -114,8 +114,8 @@ static void activate(GtkApplication *app,gpointer user_data) {
     GtkWidget
     *gridParent,
     *labelCommitMsg,
-    *headerMainWindow,
     *buttonPush,
+    *headerMainWindow,
     *buttonCommit;
 
     //Init of windowMain
@@ -219,6 +219,7 @@ void pushWindow() {
     //init of windowPush
     windowPush = gtk_window_new();
     gtk_window_set_title(GTK_WINDOW(windowPush),"Push To Remote");
+    gtk_window_present(GTK_WINDOW(windowPush));
 
     //Init of headerPush
     headerPush = gtk_header_bar_new();
@@ -226,7 +227,7 @@ void pushWindow() {
 
     //Init of buttonConfig
     buttonConfig = gtk_button_new_with_label("Config");
-    gtk_header_bar_pack_start(headerPush,buttonConfig);
+    gtk_header_bar_pack_start(GTK_HEADER_BAR(headerPush),buttonConfig);
 
     //Init of gridParent
     gridParent = gtk_grid_new();
@@ -252,7 +253,7 @@ void pushWindow() {
 
     //init of buttonPush
     buttonPush = gtk_button_new_with_label("Push");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,1,0,2,1);
+    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,1,1,1,1);
 
 
 }
