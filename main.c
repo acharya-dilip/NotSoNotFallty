@@ -308,10 +308,11 @@ void pushWindow() {
 
 void push() {
     char authurl[256];
+    gchar *repourlclean = strstr(remoterepo,"github.com");
      snprintf(authurl,sizeof(authurl)," https://%s:%s@%s ",
          ghusername,
          patoken,
-         remoterepo);
+         repourlclean);
     char command[400];
      snprintf(command,sizeof(command),"cd %s && git push %s %s",
          filepath,
