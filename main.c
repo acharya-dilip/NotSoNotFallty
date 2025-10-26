@@ -16,6 +16,10 @@ void clearCommitInfo();
 void pushWindow();
 
 void config();
+void updateRemoteRepo();
+void fetchRemoteRepo();
+void updateGitCredentials();
+void fetchGitCredentials();
 
 //Global Variables
 char filepath[256];
@@ -292,6 +296,10 @@ void pushWindow() {
 
 
 }
+//Globalised Variables
+GtkWidget
+    *entryUsername,
+    *entryToken;
 
 void config() {
     GtkWidget
@@ -300,9 +308,7 @@ void config() {
     *buttonCreateGhRepo,
     *gridParent,
     *labelUsername,
-    *entryUsername,
     *labelToken,
-    *entryToken,
     *buttonProceed;
 
     //Init of windowConfig
@@ -354,6 +360,25 @@ void config() {
 
 
 }
+
+void updateRemoteRepo() {
+
+}
+
+void fetchRemoteRepo() {
+
+}
+
+void updateGitCredentials() {
+
+}
+
+void fetchGitCredentials() {
+
+}
+
+
+
 
 
 
