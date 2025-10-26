@@ -5,6 +5,7 @@
 void initProject();
 void navFolder();
 void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data);
+void updateFilePath();
 
 //Globalised Variables
     GtkWidget *windowMain;
@@ -145,11 +146,16 @@ void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data) {
     GtkFileDialog *dialogNav = GTK_FILE_DIALOG(source);
     GFile *folder = gtk_file_dialog_select_folder_finish(dialogNav, res, NULL);
     char *path = g_file_get_path(folder);
-    //g_print("Selected folder: %s\n", path);
     //Set the entryDir to the desired file path
     gtk_editable_set_text(GTK_EDITABLE(entryDir),path);
 
 }
+
+void updateFilePath() {
+
+}
+
+
 
 int main(int argc, char **argv){
     GtkApplication *app;
