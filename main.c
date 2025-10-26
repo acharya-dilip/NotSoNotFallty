@@ -376,8 +376,9 @@ void config() {
 }
 
 void updateRemoteRepo() {
-
-    FILE *pf = fopen("ghrepo.txt","a") fclose(pf); //checks if there's a file named ghrepo.txt if not creates tge file
+    //checks if there's a file named ghrepo.txt if not creates tge file
+    FILE *pf = fopen("ghrepo.txt","a");
+    fclose(pf);
     //Writes the repo url to the ghrepo.txt file
     FILE *file = fopen("ghrepo.txt","w");
     fprintf(file,"%s",
@@ -387,11 +388,11 @@ void updateRemoteRepo() {
     char temp[512];
     snprintf(temp,sizeof(temp),"cd %s && git remote set-url origin %s",
     filepath,
-    gtk_editable_get_text(GTK_EDITABLE(entryRepo));
-    if (system(temp!=0){
+    gtk_editable_get_text(GTK_EDITABLE(entryRepo)));
+    if (system(temp)!=0){
         snprintf(temp,sizeof(temp),"cd %s && git remote add origin %s",
                                      filepath,
-                                     gtk_editable_get_text(GTK_EDITABLE(entryRepo));
+                                     gtk_editable_get_text(GTK_EDITABLE(entryRepo)));
         }
     )
 }
