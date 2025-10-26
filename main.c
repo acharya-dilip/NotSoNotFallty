@@ -312,6 +312,9 @@ void config() {
     headerConfig = gtk_header_bar_new();
     gtk_window_set_titlebar(GTK_WINDOW(windowConfig),headerConfig);
 
+    //Init of buttonCreateGhRepo
+    buttonCreateGhRepo = gtk_button_new();
+    gtk_header_bar_pack_start(GTK_HEADER_BAR(headerConfig),buttonCreateGhRepo);
 
 }
 
