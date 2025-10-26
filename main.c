@@ -212,6 +212,7 @@ void push() {
     *buttonConfig,
     *gridParent,
     *labelBranch,
+    *entryBranch,
     *buttonPush;
 
     //init of windowPush
@@ -225,6 +226,17 @@ void push() {
     //Init of buttonConfig
     buttonConfig = gtk_button_new_with_label("Config");
     gtk_header_bar_pack_start(headerPush,buttonConfig);
+
+    //Init of gridParent
+    gridParent = gtk_grid_new();
+    gtk_window_set_child(GTK_WINDOW(windowPush),gridParent);
+    //Margins & Paddings
+    gtk_widget_set_margin_start(gridParent,10);
+    gtk_widget_set_margin_end(gridParent,10);
+    gtk_widget_set_margin_top(gridParent,10);
+    gtk_widget_set_margin_bottom(gridParent,10);
+    gtk_widget_set_halign(gridParent,GTK_ALIGN_CENTER);
+    gtk_widget_set_valign(gridParent,GTK_ALIGN_CENTER);
 
 }
 
