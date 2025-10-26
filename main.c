@@ -184,8 +184,9 @@ void commit() {
 }
 
 void clearCommitInfo() {
-    gtk_editable_set_text(GTK_EDITABLE(entryCommitTitle),NULL);
-    gtk_text_view_set_buffer(GTK_TEXT_VIEW(textviewCommitMessage),NULL);
+    gtk_editable_set_text(GTK_EDITABLE(entryCommitTitle),"");
+    GtkTextBuffer *tempbuffer = gtk_text_view_get_buffer(GTK_TEXT_VIEW(textviewCommitMessage));
+    gtk_text_buffer_set_text(tempbuffer,"",-1);
 
 }
 
