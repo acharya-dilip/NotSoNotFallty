@@ -25,6 +25,7 @@ GtkWidget
 *entryDir;
 
 void initProject() {
+
     GtkWidget
     *gridParent,
     *buttonNav,
@@ -62,7 +63,8 @@ void initProject() {
     gtk_grid_attach(GTK_GRID(gridParent),entryDir,0,1,5,1);
     //Margins& Paddings
     gtk_widget_set_size_request(entryDir,250,-1);
-
+    //Call fetchFilePath to see if any previous dir is stored
+    fetchFilePath();
     //Init of buttonNav
     buttonNav = gtk_button_new_with_label("🗀");
     gtk_grid_attach(GTK_GRID(gridParent),buttonNav,5,1,1,1);
@@ -85,7 +87,7 @@ void initgitrepo() {
 
 
 void fetchFilePath() {
-    FILE *file = fopen("filePath.txt","a");
+    FILE *file = fopen("filePath.txt","r");
     fscanf(file,"%s",filepath);
     fclose(file);
     gtk_editable_set_text(GTK_EDITABLE(entryDir),filepath);
@@ -116,7 +118,7 @@ void updateFilePath() {
     //sets the filepath var to the file path in the entry
     strcpy(filepath,gtk_editable_get_text(GTK_EDITABLE(entryDir)));
     //Writing the filepath to a txt file for persistancy
-    FILE *file = fopen("filePath.txt","a");
+    FILE *file = fopen("filePath.txt","w");
     fprintf(file,
         "%s",filepath);
     fclose(file);
@@ -281,6 +283,8 @@ void pushWindow() {
 }
 
 int main(int argc, char **argv){
+    FILE *file = fopen("filePath.txt","a");
+    fclose(file);
     GtkApplication *app;
     int status;
     app= gtk_application_new ("org.gtk.example", G_APPLICATION_DEFAULT_FLAGS);
