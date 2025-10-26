@@ -244,6 +244,13 @@ void push() {
     //MArgins & Paddings
     gtk_widget_set_margin_end(labelBranch,10);
 
+    //init of entryBranch
+    entryBranch = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryBranch,1,0,1,1);
+    gtk_editable_set_text(GTK_EDITABLE(entryBranch),"master");
+
+
+
 }
 
 int main(int argc, char **argv){
