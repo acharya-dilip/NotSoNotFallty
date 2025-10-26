@@ -7,6 +7,10 @@ void navFolder();
 void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data);
 void updateFilePath();
 
+//Global Variables
+char filepath[256];
+
+
 //Globalised Variables
     GtkWidget *windowMain;
 
