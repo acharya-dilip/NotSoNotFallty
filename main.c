@@ -126,7 +126,7 @@ void initProject() {
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
     gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,0,2,6,1);
-    //g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateFilePath),NULL);
+    g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateFilePath),NULL);
 
 
 }
