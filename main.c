@@ -403,11 +403,19 @@ void fetchRemoteRepo() {
     FILE *file = fopen("ghrepo.txt","r");
     fscanf(file,"%s",remoterepo);
     fclose(file);
+
     gtk_editable_set_text(GTK_EDITABLE(entryRepo),remoterepo);
 
 }
 
 void updateGitCredentials() {
+    FILE *pf = fopen("credentials.txt","a");
+    fclose(pf);
+
+    FILE *file = fopen("credentials.txt","w");
+    fprintf(file,"%s %s",
+        gtk_editable_get_text(GTK_EDITABLE(entryUsername)),
+              gtk_editable_get_text(GTK_EDITABLE(entryToken)));
 
 }
 
