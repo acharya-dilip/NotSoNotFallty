@@ -251,10 +251,10 @@ void clearCommitInfo() {
 
 //Globalised Variables
 GtkWidget
+    *windowPush,
     *entryBranch;
 void pushWindow() {
     GtkWidget
-    *windowPush,
     *headerPush,
     *buttonConfig,
     *gridParent,
@@ -331,6 +331,7 @@ void push() {
         gtk_editable_get_text(GTK_EDITABLE(entryBranch)));
     system(command);
     }
+    gtk_window_destroy(GTK_WINDOW(windowPush));
 }
 
 //Globalised Variables
