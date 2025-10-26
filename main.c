@@ -9,7 +9,7 @@ void updateFilePath();
 void fetchFilePath();
 
 void initgitrepo();
-void initghrepi();
+void initghrepo();
 
 void commit();
 void clearCommitInfo();
@@ -55,6 +55,7 @@ void initProject() {
     //Init of ButtonInitRepo
     buttonInitRepo = gtk_button_new_with_label("➕");
     gtk_header_bar_pack_start(GTK_HEADER_BAR(headerInitProj),buttonInitRepo);
+    g_signal_connect(buttonInitRepo,"clicked",G_CALLBACK(initghrepo),NULL);
 
 
     //Init of gridParent
@@ -88,52 +89,23 @@ void initProject() {
 
 }
 
+void updateFilePath() {
+    //Automatically inits git repo in set filepath
+    initgitrepo();
+    //sets the filepath var to the file path in the entry
+    strcpy(filepath,gtk_editable_get_text(GTK_EDITABLE(entryDir)));
+    //Writing the filepath to a txt file for persistancy
+    FILE *file = fopen("filePath.txt","w");
+    fprintf(file,
+        "%s",filepath);
+    fclose(file);
+    gtk_window_destroy(GTK_WINDOW(windowInit));
+}
+
 void initgitrepo() {
     char temp[256];
     snprintf(temp,sizeof(temp),"cd %s && git init",filepath);
     system(temp);
-}
-
-void initghrepo() {
-    GtkWidget
-    *windowGhRepo,
-    *gridParent,
-    *labelRepoName,
-    *entryRepoName,
-    *labelVisibility,
-    *entryVisibility,
-    *buttonCreateGhRepo;
-
-    //Init of windowGhRepo
-    windowGhRepo = gtk_window_new();
-    gtk_window_set_title(GTK_WINDOW(windowGhRepo),"Create Github Repo");
-    gtk_window_present(GTK_WINDOW(windowGhRepo));
-
-    //Init of gridParent
-    gridParent = gtk_grid_new();
-    gtk_window_set_child(GTK_WINDOW(windowGhRepo),gridParent);
-
-    //Init of labelRepoName
-    labelRepoName = gtk_label_new("Repo Name:");
-    gtk_grid_attach(GTK_GRID(gridParent),labelRepoName,0,0,1,1);
-
-    //Init of entryRepoName
-    entryRepoName = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryRepoName,1,0,4,1);
-
-    //Init of labelVisibility
-    labelVisibility = gtk_label_new("Visibility");
-    gtk_grid_attach(GTK_GRID(gridParent),labelVisibility,0,1,1,1);
-
-    //Init of entryVisibility
-    entryVisibility = gtk_entry_new();
-    gtk_grid_attach(GTK_GRID(gridParent),entryVisibility,1,1,4,1);
-
-    //Init of buttonCreateGhRepo
-    buttonCreateGhRepo = gtk_button_new_with_label("Create Repository");
-    gtk_grid_attach(GTK_GRID(gridParent),buttonCreateGhRepo,1,2,4,1);
-
-
 }
 
 
@@ -165,17 +137,55 @@ void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data) {
 
 }
 
-void updateFilePath() {
-    //sets the filepath var to the file path in the entry
-    strcpy(filepath,gtk_editable_get_text(GTK_EDITABLE(entryDir)));
-    //Writing the filepath to a txt file for persistancy
-    FILE *file = fopen("filePath.txt","w");
-    fprintf(file,
-        "%s",filepath);
-    fclose(file);
-    gtk_window_destroy(GTK_WINDOW(windowInit));
-}
 
+void initghrepo() {
+    GtkWidget
+    *windowGhRepo,
+    *gridParent,
+    *labelRepoName,
+    *entryRepoName,
+    *labelVisibility,
+    *entryVisibility,
+    *buttonCreateGhRepo;
+
+    //Init of windowGhRepo
+    windowGhRepo = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(windowGhRepo),"Create Github Repo");
+    gtk_window_present(GTK_WINDOW(windowGhRepo));
+
+    //Init of gridParent
+    gridParent = gtk_grid_new();
+    gtk_window_set_child(GTK_WINDOW(windowGhRepo),gridParent);
+    //MArgins & Paddings
+    gtk_widget_set_margin_start(gridParent,10);
+    gtk_widget_set_margin_end(gridParent,10);
+    gtk_widget_set_margin_top(gridParent,10);
+    gtk_widget_set_margin_bottom(gridParent,10);
+    gtk_widget_set_halign(gridParent,GTK_ALIGN_CENTER);
+    gtk_widget_set_valign(gridParent,GTK_ALIGN_CENTER);
+
+    //Init of labelRepoName
+    labelRepoName = gtk_label_new("Repo Name:");
+    gtk_grid_attach(GTK_GRID(gridParent),labelRepoName,0,0,1,1);
+
+    //Init of entryRepoName
+    entryRepoName = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryRepoName,1,0,4,1);
+
+    //Init of labelVisibility
+    labelVisibility = gtk_label_new("Visibility");
+    gtk_grid_attach(GTK_GRID(gridParent),labelVisibility,0,1,1,1);
+
+    //Init of entryVisibility
+    entryVisibility = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryVisibility,1,1,4,1);
+
+    //Init of buttonCreateGhRepo
+    buttonCreateGhRepo = gtk_button_new_with_label("Create Repository");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonCreateGhRepo,1,2,4,1);
+
+
+}
 //Globalised Variables
     GtkWidget
     *entryCommitTitle,
