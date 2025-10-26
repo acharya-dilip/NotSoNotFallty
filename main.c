@@ -85,7 +85,10 @@ void updateFilePath() {
 }
 
 //Globalised Variables
-    GtkWidget *windowMain;
+    GtkWidget
+    *entryCommitTitle,
+    *textviewCommitMessage,
+    *windowMain;
 
 static void activate(GtkApplication *app,gpointer user_data) {
     //Executes the navigater window thingy
@@ -95,9 +98,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
     *gridParent,
     *buttonFilePath,
     *buttonPush,
-    *entryCommitTitle,
     *labelCommitMsg,
-    *textviewCommitMessage,
     *buttonCommit;
 
     //Init of windowMain
@@ -163,6 +164,22 @@ static void activate(GtkApplication *app,gpointer user_data) {
 }
 
 void commit() {
+    char command[1024];
+    snprintf(command,sizeof(command),"cd %s && git add .",filepath);
+    if (system(command)==0) {
+        //Fetching text from the textviewCommitMesage
+        GtkTextBuffer *bufferCommitMessage = gtk_text_view_get_buffer(GTK_TEXT_VIEW(textviewCommitMessage));
+        GtkTextIter start,end;
+        gchar *commitMsg;
+        gtk_text_buffer_get_start_iter(bufferCommitMessage,&start);
+        gtk_text_buffer_get_end_iter(bufferCommitMessage,&end);
+        commitMsg = gtk_text_buffer_get_text(bufferCommitMessage,&start,&end,FALSE);
+
+        snprintf(command,sizeof(command),"cd %s && git commit -m \"%s\" -m \"%s\"",
+            filepath,
+            gtk_editable_get_text(GTK_EDITABLE(entryCommitTitle)),
+            commitMsg);
+    }
 
 }
 
