@@ -325,6 +325,17 @@ void config() {
     labelUsername = gtk_label_new("Username:");
     gtk_grid_attach(GTK_GRID(gridParent),labelUsername,0,0,1,1);
 
+    //Init of entryUsername
+    entryUsername = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryUsername,1,0,4,1);
+
+    //Init of labelToken
+    labelToken = gtk_label_new("PA Token:");
+    gtk_grid_attach(GTK_GRID(gridParent),labelToken,0,1,1,1);
+
+    //Init of entryToken
+    entryToken = gtk_entry_new();
+    gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,1,4,1);
 
 
 
