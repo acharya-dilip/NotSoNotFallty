@@ -308,20 +308,23 @@ void pushWindow() {
 
 void push() {
 
-    char authurl[256];
-    snprintf(authurl,sizeof(authurl)," https://%s:%s@%s ",
-        ghusername,
-        patoken,
-        remoterepo);
-    char command[400];
-    snprintf(command,sizeof(command),"cd %s && git push %s %s",
+    // char authurl[256];
+    // snprintf(authurl,sizeof(authurl)," https://%s:%s@%s ",
+    //     ghusername,
+    //     patoken,
+    //     remoterepo);
+    // char command[400];
+    // snprintf(command,sizeof(command),"cd %s && git push %s %s",
+    //     filepath,
+    //     authurl,
+    //     gtk_editable_get_text(GTK_EDITABLE(entryBranch)));
+
+    char command[256];
+    snprintf(command,sizeof(command),"cd %s && git push origin %s",
         filepath,
-        authurl,
         gtk_editable_get_text(GTK_EDITABLE(entryBranch)));
     system(command);
 }
-
-//I'm bored help meeeee goddddddd I want outtttttt
 
 //Globalised Variables
 GtkWidget
