@@ -145,7 +145,7 @@ void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data) {
 }
 
 //Globalised variables
-GtkWindow
+GtkWidget
     *windowGhRepo,
     *entryRepoName,
     *entryVisibility;
@@ -196,6 +196,7 @@ void initghrepo() {
     //Init of entryVisibility
     entryVisibility = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryVisibility,1,1,4,1);
+    gtk_editable_set_text(GTK_EDITABLE(entryVisibility),"public");
 
     //Init of buttonCreateGhRepo
     buttonCreateGhRepo = gtk_button_new_with_label("Create Repository");
@@ -205,8 +206,13 @@ void initghrepo() {
 }
 
 void createghrepo(){
-
-
+    char command[256];
+    snprintf(command,sizeof(command),"cd %s && gh repo create %s --%s",
+        filepath,
+        gtk_editable_get_text(GTK_EDITABLE(entryRepoName)),
+        gtk_editable_get_text(GTK_EDITABLE(entryVisibility)));
+    system(command);
+    gtk_window_destroy(GTK_WINDOW(windowGhRepo));
 
 }
 
