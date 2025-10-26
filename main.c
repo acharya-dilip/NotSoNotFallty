@@ -206,6 +206,17 @@ void clearCommitInfo() {
 }
 
 void push() {
+    GtkWidget
+    *windowPush,
+    *headerPush,
+    *buttonConfig,
+    *gridParent,
+    *labelBranch,
+    *buttonPush;
+
+    //init of windowPush
+    windowPush = gtk_window_new();
+    gtk_window_set_title(GTK_WINDOW(windowPush),"Push To Remote");
 
 }
 
