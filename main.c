@@ -293,6 +293,16 @@ void pushWindow() {
 }
 
 void config() {
+    GtkWidget
+    *windowConfig,
+    *headerConfig,
+    *buttonCreateGhRepo,
+    *labelUsername,
+    *entryUsername,
+    *labelToken,
+    *entryToken,
+    *buttonProceed;
+
 
 }
 
