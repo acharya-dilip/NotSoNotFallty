@@ -20,6 +20,7 @@ void updateRemoteRepo();
 void fetchRemoteRepo();
 void updateGitCredentials();
 void fetchGitCredentials();
+void updateRemoteStuff();
 
 //Global Variables
 char filepath[256];
@@ -375,12 +376,18 @@ void config() {
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
     gtk_grid_attach(GTK_GRID(gridParent),buttonProceed,1,4,4,1);
-    g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateRemoteRepo),NULL);
-    g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateGitCredentials),NULL);
-
+    g_signal_connect(buttonProceed,"clicked",G_CALLBACK(updateRemoteStuff),NULL);
 
 
 }
+
+
+void updateRemoteStuff() {
+    updateRemoteRepo();
+    updateGitCredentials();
+}
+
+
 
 void updateRemoteRepo() {
     //checks if there's a file named ghrepo.txt if not creates tge file
@@ -424,6 +431,7 @@ void updateGitCredentials() {
               gtk_editable_get_text(GTK_EDITABLE(entryToken)));
 
     //You can also add git credential manager overrite thing with system()
+
 
 }
 
