@@ -157,7 +157,7 @@ static void activate(GtkApplication *app,gpointer user_data) {
     //Init of buttonCommit
     buttonCommit = gtk_button_new_with_label("Commit");
     gtk_grid_attach(GTK_GRID(gridParent),buttonCommit,0,15,10,1);
-
+    g_signal_connect(buttonCommit,"clicked",G_CALLBACK(commit),NULL);
 
 
 }
