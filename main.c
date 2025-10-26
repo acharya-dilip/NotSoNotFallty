@@ -372,6 +372,8 @@ void config() {
     entryToken = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryToken,1,2,4,1);
     gtk_entry_set_placeholder_text(GTK_ENTRY(entryToken),"Enter Personal Access Token");
+    //fetch git credentials
+    fetchGitCredentials();
 
     //Init of buttonProceed
     buttonProceed = gtk_button_new_with_label("Proceed");
@@ -412,6 +414,8 @@ void updateRemoteRepo() {
 
 
 void fetchRemoteRepo() {
+    FILE *pf = fopen("ghrepo.txt","a");
+    fclose(pf);
     //Scans the remote repo url from ghrepo.txt
     FILE *file = fopen("ghrepo.txt","r");
     fscanf(file,"%s",remoterepo);
@@ -436,6 +440,8 @@ void updateGitCredentials() {
 }
 
 void fetchGitCredentials() {
+    FILE *pf = fopen("credentials.txt","a");
+    fclose(pf);
     FILE *file = fopen("credentials.txt","r");
     fscanf(file,"%s %s",
         ghusername,
