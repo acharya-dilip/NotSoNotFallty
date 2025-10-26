@@ -93,8 +93,16 @@ void initgitrepo() {
     snprintf(temp,sizeof(temp),"cd %s && git init",filepath);
     system(temp);
 }
-void initghrepo() {
 
+void initghrepo() {
+    GtkWidget
+    *windowGhRepo,
+    *gridParent,
+    *labelRepoName,
+    *entryRepoName,
+    *labelVisibility,
+    *entryVisibility,
+    *buttonCreateGhRepo;
 }
 
 
