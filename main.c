@@ -11,7 +11,7 @@ void fetchFilePath();
 void commit();
 void clearCommitInfo();
 
-void push();
+void pushWindow();
 
 //Global Variables
 char filepath[256];
@@ -205,7 +205,7 @@ void clearCommitInfo() {
     gtk_text_buffer_set_text(tempbuffer,"",-1);
 }
 
-void push() {
+void pushWindow() {
     GtkWidget
     *windowPush,
     *headerPush,
@@ -249,6 +249,9 @@ void push() {
     gtk_grid_attach(GTK_GRID(gridParent),entryBranch,1,0,1,1);
     gtk_editable_set_text(GTK_EDITABLE(entryBranch),"master");
 
+    //init of buttonPush
+    buttonPush = gtk_button_new_with_label("Push");
+    gtk_grid_attach(GTK_GRID(gridParent),buttonPush,1,0,2,1);
 
 
 }
