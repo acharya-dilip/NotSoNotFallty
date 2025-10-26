@@ -8,6 +8,7 @@ void setFilePath(GObject *source, GAsyncResult *res, gpointer user_data);
 void updateFilePath();
 
 void commit();
+void clearCommitInfo();
 
 //Global Variables
 char filepath[256];
@@ -174,16 +175,23 @@ void commit() {
         gtk_text_buffer_get_start_iter(bufferCommitMessage,&start);
         gtk_text_buffer_get_end_iter(bufferCommitMessage,&end);
         commitMsg = gtk_text_buffer_get_text(bufferCommitMessage,&start,&end,FALSE);
-
         snprintf(command,sizeof(command),"cd %s && git commit -m \"%s\" -m \"%s\"",
             filepath,
             gtk_editable_get_text(GTK_EDITABLE(entryCommitTitle)),
             commitMsg);
+        system(command);
+        clearCommitInfo();
     }
-
+    else {
+        //Place a window that prompts user to init git if it fails and to try again
+    }
 }
 
+void clearCommitInfo() {
+    gtk_editable_set_text(GTK_EDITABLE(entryCommitTitle),NULL);
+    gtk_text_view_set_buffer(GTK_TEXT_VIEW(textviewCommitMessage),NULL);
 
+}
 
 
 
