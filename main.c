@@ -167,14 +167,23 @@ void initghrepo() {
     //Init of labelRepoName
     labelRepoName = gtk_label_new("Repo Name:");
     gtk_grid_attach(GTK_GRID(gridParent),labelRepoName,0,0,1,1);
+    //Margins & Paddings
+    gtk_widget_set_halign(labelRepoName,GTK_ALIGN_END);
+    gtk_widget_set_margin_end(labelRepoName,10);
 
     //Init of entryRepoName
     entryRepoName = gtk_entry_new();
     gtk_grid_attach(GTK_GRID(gridParent),entryRepoName,1,0,4,1);
+    //MArgins & Paddings
+    gtk_widget_set_size_request(entryRepoName,280,-1);
 
     //Init of labelVisibility
-    labelVisibility = gtk_label_new("Visibility");
+    labelVisibility = gtk_label_new("Visibility:");
     gtk_grid_attach(GTK_GRID(gridParent),labelVisibility,0,1,1,1);
+    //Margins & Paddings
+    gtk_widget_set_halign(labelVisibility,GTK_ALIGN_END);
+    gtk_widget_set_margin_end(labelVisibility,10);
+
 
     //Init of entryVisibility
     entryVisibility = gtk_entry_new();
@@ -183,6 +192,7 @@ void initghrepo() {
     //Init of buttonCreateGhRepo
     buttonCreateGhRepo = gtk_button_new_with_label("Create Repository");
     gtk_grid_attach(GTK_GRID(gridParent),buttonCreateGhRepo,1,2,4,1);
+
 
 
 }
