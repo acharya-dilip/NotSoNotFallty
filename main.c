@@ -368,6 +368,8 @@ void pushWindow() {
     buttonPush = gtk_button_new_with_label("Push");
     gtk_grid_attach(GTK_GRID(gridParent),buttonPush,1,1,4,1);
     g_signal_connect(buttonPush,"clicked",G_CALLBACK(push),NULL);
+    //Margins & Paddings
+    gtk_widget_set_margin_top(buttonPush,4);
 
 
 }
