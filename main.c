@@ -307,6 +307,7 @@ void pushWindow() {
 
 
 void push() {
+    //test commit
     char authurl[256];
     gchar *repourlclean = strstr(remoterepo,"github.com");
      snprintf(authurl,sizeof(authurl)," https://%s:%s@%s ",
